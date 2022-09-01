@@ -1,0 +1,30 @@
+<div class="busy">
+    <div class="busy__json" *ngIf="json">
+        <div class="busy__json-element">
+            Activity:<br><b>{{ json.activity }}</b>
+        </div>
+        <div class="busy__json-element">
+            Type:<br><b>{{ json.type }}</b>
+        </div>
+        <div class="busy__json-element">
+            Participants:<br><b>{{ json.participants }}</b>
+        </div>
+        <div class="busy__json-element">
+            Price:<br><b>{{ json.price }}</b>
+        </div>
+    </div>
+
+    <button class="busy__element busy__button" (click)="getData()">Get Busy</button>
+
+    <button class="busy__element busy__button" (click)="getDataLowPrice()">Low price</button>
+
+    <button class="busy__element busy__button" (click)="getDataAveragePrice()">Average price</button>
+
+    <button class="busy__element busy__button" (click)="getDataHighPrice()">High price</button>
+
+    <label class="busy__element" for="participants">Enter the number of participants</label>
+
+    <input class="busy__input" type="text" #participants>
+
+    <button class="busy__element busy__button" (click)="getDataParticipants(participants.value)">Get Busy</button>
+</div>

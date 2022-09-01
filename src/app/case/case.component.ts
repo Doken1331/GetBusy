@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-case',
@@ -12,21 +12,22 @@ export class CaseComponent implements OnInit {
   case!: any;
   json!: any;
 
-  constructor(private http: HttpClient, private DataService: DataService) { }
+  constructor(private http: HttpClient, private dataService: DataService) { }
 
   ngOnInit(): void {
-    
+    this.dataService.getCase().subscribe((response) => {
+      this.json = response;
+    })
   }
 
-  public getJson() {
-    this.case = this.DataService.getCase();
-  }
+  // public getJson() {
+  //   this.DataService.getCase();
+  // }
 
-  public getCase() {  
-    this.http.get('https://www.boredapi.com/api/activity/').subscribe((response) => {
-    this.json = response;
-    console.log(this.json)
-  });
-  }
+  // public getCase() {  
+  //   this.http.get('https://www.boredapi.com/api/activity/').subscribe((response) => {
+  //   this.json = response;
+  // });
+  // }
 
 }

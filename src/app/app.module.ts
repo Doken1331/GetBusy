@@ -4,7 +4,7 @@ import { HttpClientModule }   from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CaseComponent } from './case/case.component';
+import { CaseComponent } from './components/case/case.component';
 
 @NgModule({
   declarations: [
