@@ -23,7 +23,7 @@ export class CaseComponent implements OnInit {
   }
 
   public getCase() {  
-    this.http.get('http://www.boredapi.com/api/activity/').subscribe((response) => {
+    this.http.get('https://www.boredapi.com/api/activity/').subscribe((response) => {
     this.json = response;
     console.log(this.json)
   });
